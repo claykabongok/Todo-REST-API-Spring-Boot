@@ -11,6 +11,7 @@ import javax.validation.constraints.Size;
 import java.util.Date;
 
 
+
 @Entity
 @Table(name = "todo")
 public class Todo {
@@ -39,21 +40,6 @@ public class Todo {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     @Temporal(TemporalType.DATE)
     private Date todoDate;
-    /**
-     * @Column(name = "registration_date", updatable = false)
-     *        @Temporal(TemporalType.TIMESTAMP)
-     *
-     *    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss", timezone = "Africa/Johannesburg")
-     * 	//@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "${ers.app.date.full.format}", timezone = "Africa/Johannesburg")
-     *    @CreationTimestamp
-     *    private Date registration_date;
-     *
-     *
-     *    @Temporal(TemporalType.TIMESTAMP)
-     *    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss")
-     *    @UpdateTimestamp
-     *    private Date update_date;
-     */
 
     @Column(name = "creation_date", updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
