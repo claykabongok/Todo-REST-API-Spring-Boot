@@ -15,6 +15,15 @@ add item to a to-do list, update, select and remove from the list.
 * [CrudRepository](https://spring.io/guides/gs/rest-service/)
 
 
+### Usage
+* Make sure you have [java JDK](https://www.oracle.com/java/technologies/javase-jdk8-downloads.html) and (Maven](https://maven.apache.org/) installed
+* Make sure you have a Mysql server running and Modify the following detials (Database name, password, username in the application.properties):
+spring.datasource.url=jdbc:mysql://localhost:3306/todo_db?autoReconnect=true&
+spring.datasource.username=testUsername
+spring.datasource.password=testpasword
+* Run the application using your preferred IDE ([IntelliJ](https://www.jetbrains.com/idea/), [STS](https://spring.io/tools))
+
+
 
 ##  Application Demo with [Postman](https://www.postman.com/):
 
@@ -22,26 +31,28 @@ add item to a to-do list, update, select and remove from the list.
 
 ### Todo list :
 
-<img src="https://github.com/claykabongok/Todo-REST-API-Spring-Boot
-/blob/master/Readme/todolist.jpg?raw=true" width=400 alt="Demo screen">
+<img src="https://github.com/claykabongok/Todo-REST-API-Spring-Boot/blob/master/readme/todolist.jpg?raw=true"  alt="Demo screen postman">
 
 
 ### Add  Item
 
-<img src="https://github.com/claykabongok/Todo-REST-API-Spring-Boot
-/blob/master/Readme/additem.jpg?raw=true" width=400 alt="Demo screen">
+<img src="https://github.com/claykabongok/Todo-REST-API-Spring-Boot/blob/master/readme/additem.jpg?raw=true"  alt="Demo screen postman">
+
 
 ### Update item
-<img src="https://github.com/claykabongok/Todo-REST-API-Spring-Boot
-/blob/master/Readme/updateItem.jpg?raw=true" width=400 alt="Demo screen">
+<img src="https://github.com/claykabongok/Todo-REST-API-Spring-Boot/blob/master/readme/updateItem.jpg?raw=true"  alt="Demo screen postman">
+
+
 
 
 
 ### Delete item
-<img src="https://github.com/claykabongok/Todo-REST-API-Spring-Boot
-/blob/master/Readme/deleteInvalidId.jpg?raw=true" width=400 alt="Demo screen">
+<img src="https://github.com/claykabongok/Todo-REST-API-Spring-Boot/blob/master/readme/deleteInvalidId.jpg?raw=true"  alt="Demo screen postman">
 
-<img src="https://github.com/claykabongok/Todo-REST-API-Spring-Boot
-/blob/master/Readme/deleteItem.jpg?raw=true" width=400 alt="Demo screen">
+
+
+<img src="https://github.com/claykabongok/Todo-REST-API-Spring-Boot/blob/master/readme/deleteItem.jpg?raw=true"  alt="Demo screen postman">
+
+
 
 
