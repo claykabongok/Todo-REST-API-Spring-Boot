@@ -7,6 +7,7 @@ import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
+
 @Entity
 @Table(name = "todo")
 public class Todo {
@@ -23,6 +24,10 @@ public class Todo {
     @NotBlank
     @Column(name = "todo_description")
     private String todoDescription;
+
+
+    @Column(name = "is_complete")
+    private boolean isComplete;
 
     @FutureOrPresent
     @Column(name = "todo_date")
@@ -44,13 +49,22 @@ public class Todo {
         //empty constructor
     }
 
-    public Todo(long todoId, @NotBlank String todoTitle, @NotBlank String todoDescription, @FutureOrPresent Date todoDate, Date creationDate, Date updateDate) {
+    public Todo(long todoId, @NotBlank String todoTitle, @NotBlank String todoDescription, boolean isComplete, @FutureOrPresent Date todoDate, Date creationDate, Date updateDate) {
         TodoId = todoId;
         this.todoTitle = todoTitle;
         this.todoDescription = todoDescription;
+        this.isComplete = isComplete;
         this.todoDate = todoDate;
         this.creationDate = creationDate;
         this.updateDate = updateDate;
+    }
+
+    public boolean isComplete() {
+        return isComplete;
+    }
+
+    public void setComplete(boolean complete) {
+        isComplete = complete;
     }
 
     public long getTodoId() {

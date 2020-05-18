@@ -1,4 +1,6 @@
 package com.claykab.todo_api.todo;
 
-public class TodoRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface TodoRepository extends CrudRepository<Todo, Long> {
 }
