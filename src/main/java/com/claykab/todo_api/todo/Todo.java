@@ -1,6 +1,10 @@
 package com.claykab.todo_api.todo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -14,6 +18,9 @@ import java.util.Date;
 
 @Entity
 @Table(name = "todo")
+@AllArgsConstructor
+@NoArgsConstructor
+
 public class Todo {
     @Id
     @SequenceGenerator(name = "todo_seq", initialValue = 1110, allocationSize = 101)
@@ -52,20 +59,6 @@ public class Todo {
     @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd hh:mm:ss" )
     @UpdateTimestamp
     private Date updateDate;
-
-    public Todo() {
-        //empty constructor
-    }
-
-    public Todo(long todoId, @NotBlank String todoTitle, @NotBlank String todoDescription, boolean isComplete, @FutureOrPresent Date todoDate, Date creationDate, Date updateDate) {
-        TodoId = todoId;
-        this.todoTitle = todoTitle;
-        this.todoDescription = todoDescription;
-        this.isComplete = isComplete;
-        this.todoDate = todoDate;
-        this.creationDate = creationDate;
-        this.updateDate = updateDate;
-    }
 
     public boolean isComplete() {
         return isComplete;
