@@ -1,10 +1,13 @@
 package com.claykab.todo_api.todo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 
@@ -18,10 +21,12 @@ public class Todo {
     private long TodoId;
 
     @NotBlank
+    @Size(min = 5, message = "A Description should have at least 5 characters")
     @Column(name = "todo_title")
     private String todoTitle;
 
     @NotBlank
+    @Size(min = 5, message = "A Description should have at least 5 characters")
     @Column(name = "todo_description")
     private String todoDescription;
 
@@ -34,15 +39,32 @@ public class Todo {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     @Temporal(TemporalType.DATE)
     private Date todoDate;
+    /**
+     * @Column(name = "registration_date", updatable = false)
+     *        @Temporal(TemporalType.TIMESTAMP)
+     *
+     *    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss", timezone = "Africa/Johannesburg")
+     * 	//@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "${ers.app.date.full.format}", timezone = "Africa/Johannesburg")
+     *    @CreationTimestamp
+     *    private Date registration_date;
+     *
+     *
+     *    @Temporal(TemporalType.TIMESTAMP)
+     *    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss")
+     *    @UpdateTimestamp
+     *    private Date update_date;
+     */
 
     @Column(name = "creation_date", updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd hh:mm:ss" )
+    @CreationTimestamp
     private Date creationDate;
 
     @Column(name = "update_date")
     @Temporal(TemporalType.TIMESTAMP)
     @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd hh:mm:ss" )
+    @UpdateTimestamp
     private Date updateDate;
 
     public Todo() {
